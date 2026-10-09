@@ -1,0 +1,300 @@
+
+/* 1. Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f7fb;
+    color: #1e293b;
+    line-height: 1.6;
+}
+
+/* 2. Navigation bar */
+header {
+    background: #ffffff;
+    padding: 20px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px #0000000a;
+}
+
+header h1 {
+    color: #2563eb;
+    font-size: 24px;
+}
+
+header p {
+    color: #64748b;
+    font-size: 14px;
+}
+
+/* 3. Hero section */
+main {
+    max-width: 1100px;
+    margin: 60px auto;
+    padding: 0 24px;
+}
+
+main h2 {
+    font-size: clamp(32px, 5vw, 52px);
+    line-height: 1.2;
+    max-width: 650px;
+    margin-bottom: 20px;
+}
+
+main > p {
+    color: #64748b;
+    font-size: 18px;
+    margin-bottom: 32px;
+}
+
+/* 4. Responsive adjustments */
+@media (max-width: 600px) {
+    header {
+        padding: 18px 20px;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    main {
+        margin: 40px auto;
+        padding: 0 20px;
+    }
+}
+
+/* Hero section */
+.eyebrow {
+    color: #2563eb;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 16px;
+}
+
+/* Services section */
+.services {
+    margin-top: 70px;
+}
+
+.services > h2 {
+    font-size: 28px;
+    margin-bottom: 24px;
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.service-card {
+    background: #ffffff;
+    padding: 28px;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    transition: transform 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px #0f172a12;
+}
+
+.service-card span {
+    font-size: 32px;
+}
+
+.service-card h3 {
+    margin: 16px 0 8px;
+    font-size: 20px;
+}
+
+.service-card p {
+    color: #64748b;
+    font-size: 14px;
+    min-height: 68px;
+}
+
+.service-card button {
+    margin-top: 20px;
+    padding: 12px 18px;
+    width: 100%;
+    border: none;
+    border-radius: 8px;
+    background: #2563eb;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.service-card button:hover {
+    background: #1d4ed8;
+}
+
+/* Mobile-friendly service cards */
+@media (max-width: 750px) {
+    .service-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .service-card p {
+        min-height: auto;
+    }
+
+    .services {
+        margin-top: 48px;
+    }
+}
+
+/* Booking form */
+.booking-section {
+    max-width: 650px;
+    margin: 60px auto;
+    padding: 32px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+}
+
+.booking-section[hidden],
+#booking-message[hidden] {
+    display: none;
+}
+
+.booking-section > h2 {
+    margin-bottom: 8px;
+}
+
+.booking-section > p {
+    color: #64748b;
+    margin-bottom: 24px;
+}
+
+#booking-form {
+    display: grid;
+    gap: 10px;
+}
+
+#booking-form label {
+    font-weight: bold;
+    margin-top: 8px;
+}
+
+#booking-form input,
+#booking-form select,
+#booking-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font: inherit;
+}
+
+#booking-form input:focus,
+#booking-form select:focus,
+#booking-form textarea:focus {
+    outline: 2px solid #93c5fd;
+    border-color: #2563eb;
+}
+
+#booking-form button {
+    padding: 13px;
+    margin-top: 12px;
+    border: none;
+    border-radius: 8px;
+    background: #2563eb;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#booking-form button.cancel-btn {
+    margin-top: 0;
+    background: #e2e8f0;
+    color: #1e293b;
+}
+
+#booking-message {
+    margin-top: 20px;
+    padding: 16px;
+    background: #dcfce7;
+    color: #166534;
+    border-radius: 8px;
+    overflow-wrap: anywhere;
+}
+
+@media (max-width: 600px) {
+    .booking-section {
+        margin: 36px 20px;
+        padding: 22px;
+    }
+}
+
+.history-section {
+    max-width: 1100px;
+    margin: 60px auto;
+    padding: 0 24px;
+}
+
+.history-section h2 {
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+
+.history-section > p {
+    color: #64748b;
+    margin-bottom: 20px;
+}
+
+.table-wrapper {
+    overflow-x: auto;
+    background: white;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+}
+
+.history-section table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.history-section th,
+.history-section td {
+    padding: 16px;
+    border-bottom: 1px solid #e2e8f0;
+    white-space: nowrap;
+}
+
+.history-section th {
+    background: #eff6ff;
+    color: #1e40af;
+}
+
+.history-section td {
+    font-size: 14px;
+}
+
+.status-label {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 20px;
+    background: #fef3c7;
+    color: #92400e;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+@media (max-width: 600px) {
+    .history-section {
+        padding: 0 20px;
+    }
+}

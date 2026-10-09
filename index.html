@@ -1,0 +1,144 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Service Booking</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>LocalServe.</h1>
+        <p>Reliable help, right around the corner.</p>
+    </header>
+
+    <main>
+        <section class="hero">
+            <p class="eyebrow">YOUR NEIGHBOURHOOD, TAKEN CARE OF</p>
+            <h2>Trusted help for your everyday needs.</h2>
+            <p>
+                Find local professionals for home repairs,
+                cleaning and more.
+            </p>
+        </section>
+
+        <section class="services">
+            <h2>Explore our services</h2>
+
+            <div class="service-grid">
+                <article class="service-card">
+                    <span>⚡</span>
+                    <h3>Electrician</h3>
+                    <p>Help with wiring, lights and electrical repairs.</p>
+                    <button type="button">Book service</button>
+                </article>
+
+                <article class="service-card">
+                    <span>🔧</span>
+                    <h3>Plumber</h3>
+                    <p>Fix leaking taps, pipes and plumbing issues.</p>
+                    <button type="button">Book service</button>
+                </article>
+
+                <article class="service-card">
+                    <span>✨</span>
+                    <h3>Home Cleaning</h3>
+                    <p>Keep your home clean, fresh and comfortable.</p>
+                    <button type="button">Book service</button>
+                </article>
+            </div>
+        </section>
+        
+<section class="booking-section" id="booking-section" hidden>
+    <h2>Book your service</h2>
+    <p>Enter your details to request a booking.</p>
+
+    <form id="booking-form">
+        <label for="service">Choose service</label>
+        <select id="service" name="service" required>
+            <option value="">Select a service</option>
+            <option value="Electrician">Electrician</option>
+            <option value="Plumber">Plumber</option>
+            <option value="Home Cleaning">Home Cleaning</option>
+        </select>
+
+        <label for="customer-name">Your name</label>
+        <input
+            type="text"
+            id="customer-name"
+            name="customerName"
+            placeholder="Enter your full name"
+            required
+            minlength="2"
+        >
+
+        <label for="phone">Phone number</label>
+        <input
+            type="tel"
+            id="phone"
+            name="phone"
+            placeholder="10-digit Indian mobile number"
+            pattern="[6-9][0-9]{9}"
+            title="Enter a valid 10-digit Indian mobile number"
+            required
+        >
+
+        <label for="address">Service address</label>
+        <textarea
+            id="address"
+            name="address"
+            placeholder="Enter your address"
+            required
+            minlength="5"
+            rows="3"
+        ></textarea>
+
+        <label for="booking-date">Preferred date</label>
+        <input
+            type="date"
+            id="booking-date"
+            name="bookingDate"
+            required
+        >
+
+        <button type="submit">Confirm booking request</button>
+        <button type="button" id="cancel-booking" class="cancel-btn">
+            Cancel
+        </button>
+    </form>
+
+    <div id="booking-message" role="status" aria-live="polite" hidden></div>
+</section>
+
+<section class="history-section">
+    <h2>Your Booking History</h2>
+    <p>Review the service requests saved in this browser.</p>
+
+    <div class="table-wrapper">
+        <table>
+            <thead>
+                <tr>
+                    <th>Service</th>
+                    <th>Name</th>
+                    <th>Date</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="booking-history">
+                <!-- JavaScript will insert bookings here -->
+            </tbody>
+        </table>
+    </div>
+
+    <p id="empty-history">No bookings saved yet.</p>
+</section>
+
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
